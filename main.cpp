@@ -300,5 +300,42 @@ int main() {
     print_matrix(matrixA, 0, (N + 2) * 1 + 1);
     print_matrix(matrixB, N + 1, (N + 2) * 1 + 1);
 
+    cout << endl;
+    system("pause");
+    system("cls");
+
+    cout << "Индивидуальное домашнее задание №10" << endl;
+    cout << "Матрица 3x3 со случайными числами от -30 до 30: " << endl;
+
+    int matrixC[3][3];
+    for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 3; ++j) {
+            *(*(matrixC + i) + j) = rand() % 61 - 30;
+            cout << *(*(matrixC + i) + j) << '\t';
+        }
+        cout << endl;
+    }
+    int a = *(*(matrixC + 0) + 0) * *(*(matrixC + 1) + 1) * *(*(matrixC + 2) + 2);
+    int b = *(*(matrixC + 0) + 1) * *(*(matrixC + 1) + 2) * *(*(matrixC + 2) + 0);
+    int c = *(*(matrixC + 0) + 2) * *(*(matrixC + 1) + 0) * *(*(matrixC + 2) + 1);
+    int d = *(*(matrixC + 0) + 2) * *(*(matrixC + 1) + 1) * *(*(matrixC + 2) + 0);
+    int e = *(*(matrixC + 0) + 0) * *(*(matrixC + 1) + 2) * *(*(matrixC + 2) + 1);
+    int f = *(*(matrixC + 0) + 1) * *(*(matrixC + 1) + 0) * *(*(matrixC + 2) + 2);
+    int det = a + b + c - (d + e + f);
+    cout << "Вычисление определителя матрицы..." << endl;
+    Sleep(50);
+    cout << "Произведение элементов главной диагонали: " << a << endl;
+    Sleep(50);
+    cout << "Произведение элементов первого треугольника параллельного главной диагонали: " << b << endl;
+    Sleep(50);
+    cout << "Произведение элементов второго треугольника параллельного главной диагонали: " << c << endl;
+    Sleep(50);
+    cout << "Произведение элементов побочной диагонали: " << d << endl;
+    Sleep(50);
+    cout << "Произведение элементов первого треугольника параллельного побочной диагонали: " << e << endl;
+    Sleep(50);
+    cout << "Произведение элементов второго треугольника параллельного побочной диагонали: " << f << endl;
+    Sleep(50);
+    cout << "Вычисленный определитель: " << det << endl;
     return 0;
 }
