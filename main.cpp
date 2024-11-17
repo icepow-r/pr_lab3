@@ -20,12 +20,9 @@ void set_element(int matrix[][N], int x, int y, int offset_x, int offset_y) {
     Sleep(10);
 }
 
-void print_matrix(int matrix[][N], int offset_x, int offset_y)
-{
-    for (int i = 0; i < N; i++)
-    {
-        for (int j = 0; j < N; j++)
-        {
+void print_matrix(int matrix[][N], int offset_x, int offset_y) {
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
             destCoord.X = (i + offset_x) * WIDTH;
             destCoord.Y = j + offset_y;
             SetConsoleCursorPosition(hStdout, destCoord);
@@ -54,45 +51,24 @@ void quicksort(int arr[][N], int end, int begin) {
 }
 
 
-void show_a(int matrix[][N], int offset_x, int offset_y)
-{
-    for (int i = 0; i < N / 2; i++)
-    {
-        for (int j = 0; j < N / 2; j++)
-        {
+void show_a(int matrix[][N], int offset_x, int offset_y) {
+    for (int i = 0; i < N / 2; i++) {
+        for (int j = 0; j < N / 2; j++) {
             destCoord.X = offset_x + j * WIDTH;
             destCoord.Y = offset_y + i;
             SetConsoleCursorPosition(hStdout, destCoord);
             cout << *(*(matrix + i + N / 2) + j);
-        }
-    }
 
-    for (int i = 0; i < N / 2; i++)
-    {
-        for (int j = 0; j < N / 2; j++)
-        {
             destCoord.X = offset_x + (j + N / 2) * WIDTH;
             destCoord.Y = offset_y + i;
             SetConsoleCursorPosition(hStdout, destCoord);
             cout << *(*(matrix + i) + j);
-        }
-    }
 
-    for (int i = 0; i < N / 2; i++)
-    {
-        for (int j = 0; j < N / 2; j++)
-        {
             destCoord.X = offset_x + j * WIDTH;
             destCoord.Y = offset_y + i + N / 2;
             SetConsoleCursorPosition(hStdout, destCoord);
             cout << *(*(matrix + i + N / 2) + j + N / 2);
-        }
-    }
 
-    for (int i = 0; i < N / 2; i++)
-    {
-        for (int j = 0; j < N / 2; j++)
-        {
             destCoord.X = offset_x + (j + N / 2) * WIDTH;
             destCoord.Y = offset_y + i + N / 2;
             SetConsoleCursorPosition(hStdout, destCoord);
@@ -101,45 +77,24 @@ void show_a(int matrix[][N], int offset_x, int offset_y)
     }
 }
 
-void show_b(int matrix[][N], int offset_x, int offset_y)
-{
-    for (int i = 0; i < N / 2; i++)
-    {
-        for (int j = 0; j < N / 2; j++)
-        {
+void show_b(int matrix[][N], int offset_x, int offset_y) {
+    for (int i = 0; i < N / 2; i++) {
+        for (int j = 0; j < N / 2; j++) {
             destCoord.X = (offset_x + (j + N / 2)) * WIDTH;
             destCoord.Y = offset_y + i;
             SetConsoleCursorPosition(hStdout, destCoord);
             cout << *(*(matrix + i + N / 2) + j);
-        }
-    }
 
-    for (int i = 0; i < N / 2; i++)
-    {
-        for (int j = 0; j < N / 2; j++)
-        {
             destCoord.X = (offset_x + j + N / 2) * WIDTH;
             destCoord.Y = offset_y + i + N / 2;
             SetConsoleCursorPosition(hStdout, destCoord);
             cout << *(*(matrix + i) + j);
-        }
-    }
 
-    for (int i = 0; i < N / 2; i++)
-    {
-        for (int j = 0; j < N / 2; j++)
-        {
             destCoord.X = (offset_x + j) * WIDTH;
             destCoord.Y = offset_y + i;
             SetConsoleCursorPosition(hStdout, destCoord);
             cout << *(*(matrix + i + N / 2) + j + N / 2);
-        }
-    }
 
-    for (int i = 0; i < N / 2; i++)
-    {
-        for (int j = 0; j < N / 2; j++)
-        {
             destCoord.X = (offset_x + j) * WIDTH;
             destCoord.Y = offset_y + i + N / 2;
             SetConsoleCursorPosition(hStdout, destCoord);
@@ -148,45 +103,24 @@ void show_b(int matrix[][N], int offset_x, int offset_y)
     }
 }
 
-void show_c(int matrix[][N], int offset_x, int offset_y)
-{
-    for (int i = 0; i < N / 2; i++)
-    {
-        for (int j = 0; j < N / 2; j++)
-        {
+void show_c(int matrix[][N], int offset_x, int offset_y) {
+    for (int i = 0; i < N / 2; i++) {
+        for (int j = 0; j < N / 2; j++) {
             destCoord.X = (offset_x + j) * WIDTH;
             destCoord.Y = offset_y + i;
             SetConsoleCursorPosition(hStdout, destCoord);
             cout << *(*(matrix + i + N / 2) + j);
-        }
-    }
 
-    for (int i = 0; i < N / 2; i++)
-    {
-        for (int j = 0; j < N / 2; j++)
-        {
             destCoord.X = (offset_x + j) * WIDTH;
             destCoord.Y = offset_y + i + N / 2;
             SetConsoleCursorPosition(hStdout, destCoord);
             cout << *(*(matrix + i) + j);
-        }
-    }
 
-    for (int i = 0; i < N / 2; i++)
-    {
-        for (int j = 0; j < N / 2; j++)
-        {
             destCoord.X = (offset_x + j + N / 2) * WIDTH;
             destCoord.Y = offset_y + i;
             SetConsoleCursorPosition(hStdout, destCoord);
             cout << *(*(matrix + i + N / 2) + j + N / 2);
-        }
-    }
 
-    for (int i = 0; i < N / 2; i++)
-    {
-        for (int j = 0; j < N / 2; j++)
-        {
             destCoord.X = (offset_x + j + N / 2) * WIDTH;
             destCoord.Y = offset_y + i + N / 2;
             SetConsoleCursorPosition(hStdout, destCoord);
@@ -195,45 +129,24 @@ void show_c(int matrix[][N], int offset_x, int offset_y)
     }
 }
 
-void show_d(int matrix[][N], int offset_x, int offset_y)
-{
-    for (int i = 0; i < N / 2; i++)
-    {
-        for (int j = 0; j < N / 2; j++)
-        {
+void show_d(int matrix[][N], int offset_x, int offset_y) {
+    for (int i = 0; i < N / 2; i++) {
+        for (int j = 0; j < N / 2; j++) {
             destCoord.X = (offset_x + j + N / 2) * WIDTH;
             destCoord.Y = offset_y + i + N / 2;
             SetConsoleCursorPosition(hStdout, destCoord);
             cout << *(*(matrix + i + N / 2) + j);
-        }
-    }
 
-    for (int i = 0; i < N / 2; i++)
-    {
-        for (int j = 0; j < N / 2; j++)
-        {
             destCoord.X = (offset_x + j + N / 2) * WIDTH;
             destCoord.Y = offset_y + i;
             SetConsoleCursorPosition(hStdout, destCoord);
             cout << *(*(matrix + i) + j);
-        }
-    }
 
-    for (int i = 0; i < N / 2; i++)
-    {
-        for (int j = 0; j < N / 2; j++)
-        {
             destCoord.X = (offset_x + j) * WIDTH;
             destCoord.Y = offset_y + i + N / 2;
             SetConsoleCursorPosition(hStdout, destCoord);
             cout << *(*(matrix + i + N / 2) + j + N / 2);
-        }
-    }
 
-    for (int i = 0; i < N / 2; i++)
-    {
-        for (int j = 0; j < N / 2; j++)
-        {
             destCoord.X = (offset_x + j) * WIDTH;
             destCoord.Y = offset_y + i;
             SetConsoleCursorPosition(hStdout, destCoord);
@@ -301,12 +214,11 @@ int main() {
     show_c(matrixA, (N + 1) * 2, N + 3);
     show_d(matrixA, (N + 1) * 3, N + 3);
 
-
     destCoord.X = 0;
     destCoord.Y = (N + 2) * 2;
     SetConsoleCursorPosition(hStdout, destCoord);
 
-    cout << "Перестановки второй матрицы: " ;
+    cout << "Перестановки второй матрицы: ";
 
     show_a(matrixB, 0, (N + 2) * 2 + 1);
     show_b(matrixB, N + 1, (N + 2) * 2 + 1);
