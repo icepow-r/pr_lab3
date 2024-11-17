@@ -229,10 +229,76 @@ int main() {
     destCoord.Y = (N + 2) * 3;
     SetConsoleCursorPosition(hStdout, destCoord);
 
-    cout << "Отсортированные матрицы: " << endl;
+    system("pause");
+    system("cls");
+
+    cout << "Исходные матрицы: ";
+    print_matrix(matrixA, 0, 1);
+    print_matrix(matrixB, N + 1, 1);
+
+    destCoord.X = 0;
+    destCoord.Y = (N + 2) * 1;
+    SetConsoleCursorPosition(hStdout, destCoord);
+
+    cout << "Отсортированные матрицы: ";
     quicksort(matrixA, N * N - 1, 0);
     quicksort(matrixB, N * N - 1, 0);
-    print_matrix(matrixA, 0, (N + 2) * 3 + 1);
-    print_matrix(matrixB, N + 1, (N + 2) * 3 + 1);
+    print_matrix(matrixA, 0, (N + 2) * 1 + 1);
+    print_matrix(matrixB, N + 1, (N + 2) * 1 + 1);
+
+    destCoord.X = 0;
+    destCoord.Y = (N + 2) * 2;
+    SetConsoleCursorPosition(hStdout, destCoord);
+
+    system("pause");
+    system("cls");
+
+    cout << "Модификация всех элементов матрицы" << endl;
+    cout << "Введите число: ";
+    int number;
+    cin >> number;
+
+    char operation;
+    do {
+        cout << "Введите знак операции (+, -, *, /): ";
+        cin >> operation;
+    } while (operation != '+' && operation != '-' && operation != '*' && operation != '/');
+
+    system("cls");
+    cout << "Исходные матрицы: ";
+    print_matrix(matrixA, 0, 1);
+    print_matrix(matrixB, N + 1, 1);
+
+    for (int i = 0; i < N; ++i) {
+        for (int j = 0; j < N; ++j) {
+            switch (operation) {
+                case '+':
+                    *(*(matrixA + i) + j) += number;
+                    *(*(matrixB + i) + j) += number;
+                    break;
+                case '-':
+                    *(*(matrixA + i) + j) -= number;
+                    *(*(matrixB + i) + j) -= number;
+                    break;
+                case '*':
+                    *(*(matrixA + i) + j) *= number;
+                    *(*(matrixB + i) + j) *= number;
+                    break;
+                case '/':
+                    *(*(matrixA + i) + j) /= number;
+                    *(*(matrixB + i) + j) /= number;
+                    break;
+            }
+        }
+    }
+
+    destCoord.X = 0;
+    destCoord.Y = (N + 2) * 1;
+    SetConsoleCursorPosition(hStdout, destCoord);
+
+    cout << "Результат: ";
+    print_matrix(matrixA, 0, (N + 2) * 1 + 1);
+    print_matrix(matrixB, N + 1, (N + 2) * 1 + 1);
+
     return 0;
 }
